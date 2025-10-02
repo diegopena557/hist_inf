@@ -42,15 +42,13 @@ with st.sidebar:
     "Herramienta de Dibujo:",
     ("freedraw", "line", "rect", "circle", "transform", "polygon" "point"),
   )
+    #Stroke width slider
+    stroke_width = st.slider('Selecciona el ancho de línea', 1, 30, 15)
 
-  #Stroke width slider
-  stroke_width = st.slider('Selecciona el ancho de línea', 1, 30, 15)
-
-  #Stroke color picker
-  stroke_color = st.color_picker("Color de trazo", '#FFFFFF')
-
-  #Background color
-  bg_color = st.color_picker("Color de fondo", '#000000')
+    #Stroke color picker
+    stroke_color = st.color_picker("Color de trazo", '#FFFFFF')
+    #Background color
+    bg_color = st.color_picker("Color de fondo", '#000000')
     st.subheader("Acerca de:")
     st.subheader("En esta aplicación veremos la capacidad que ahora tiene una máquina de interpretar un boceto")
 st.subheader("Dibuja el boceto en el panel y presiona el botón para analizarla")
