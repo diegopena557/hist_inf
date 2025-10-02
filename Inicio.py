@@ -29,9 +29,28 @@ def encode_image_to_base64(image_path):
 
 
 # Streamlit 
-st.set_page_config(page_title='Tablero Inteligente')
-st.title('Tablero Inteligente')
+st.set_page_config(page_title='Historias de programación')
+st.title('Historias de programación')
 with st.sidebar:
+    st.subheader("Propiedades del tablero")
+    #Canvas dimensions
+    st.subheader("Dimensiones del tablero")
+    canvas_width = st.slider("Ancho del tablero", 300, 700, 500, 50)
+    canvas_height = st.slider("Alto del tablero", 200, 600, 300, 50)
+    # Drawing mode selector
+    drawing_mode = st.selectbox(
+    "Herramienta de Dibujo:",
+    ("freedraw", "line", "rect", "circle", "transform", "polygon" "point"),
+  )
+
+  #Stroke width slider
+  stroke_width = st.slider('Selecciona el ancho de línea', 1, 30, 15)
+
+  #Stroke color picker
+  stroke_color = st.color_picker("Color de trazo", '#FFFFFF')
+
+  #Background color
+  bg_color = st.color_picker("Color de fondo", '#000000')
     st.subheader("Acerca de:")
     st.subheader("En esta aplicación veremos la capacidad que ahora tiene una máquina de interpretar un boceto")
 st.subheader("Dibuja el boceto en el panel y presiona el botón para analizarla")
@@ -48,8 +67,10 @@ canvas_result = st_canvas(
     stroke_width=stroke_width,
     stroke_color=stroke_color,
     background_color=bg_color,
-    height=300,
-    width=400,
+    height=canvas_height,
+    width=canvas_width,
+    drawing_mode=drawing_mode,
+    key=f"canvas_{canvas_width}_{canvas_height}",
     drawing_mode=drawing_mode,
     key="canvas",
 )
