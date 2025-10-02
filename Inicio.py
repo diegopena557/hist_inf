@@ -127,7 +127,7 @@ if st.session_state.analysis_done:
     
     if st.button("✨ Crear historia infantil"):
         with st.spinner("Creando historia..."):
-            story_prompt = f"Basándote en esta descripción: '{st.session_state.full_response}', crea una historia infantil breve y entretenida. La historia debe ser creativa y apropiada para niños."
+            story_prompt = f"Basándote en esta descripción: '{st.session_state.full_response}', crea una historia completa, breve y entretenida. La historia debe ser creativa y siempre tratar de explicar algun concepto relacionado a la programación, tratando de encaminar la historia para llegar a explicar algún concepto al final."
             
             story_response = openai.chat.completions.create(
                 model="gpt-4o-mini",
