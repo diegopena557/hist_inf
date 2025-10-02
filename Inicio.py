@@ -53,11 +53,6 @@ with st.sidebar:
     st.subheader("En esta aplicación veremos la capacidad que ahora tiene una máquina de interpretar un boceto")
 st.subheader("Dibuja el boceto en el panel y presiona el botón para analizarla")
 
-# Add canvas component
-drawing_mode = "freedraw"
-stroke_width = st.sidebar.slider('Selecciona el ancho de línea', 1, 30, 5)
-stroke_color = "#000000" 
-bg_color = '#FFFFFF'
 
 # Create a canvas component
 canvas_result = st_canvas(
